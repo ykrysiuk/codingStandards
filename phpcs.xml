@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<ruleset name="PROJECT">
+  <description>PROJECT</description>
+  <arg value="s"/>
+  <arg name="colors"/>
+  <arg name="extensions" value="php,module,inc,install,theme,profile"/>
+  <file>*/web/modules/custom</file>
+  <file>*/web/themes/custom</file>
+  <file>*/web/profiles/custom</file>
+  <!-- Exclude vendors. -->
+  <exclude-pattern>*/core</exclude-pattern>
+  <exclude-pattern>*/modules/contrib</exclude-pattern>
+  <exclude-pattern>*/node_modules</exclude-pattern>
+  <!-- Exclude fixtures. -->
+  <exclude-pattern>*/fixtures/*</exclude-pattern>
+  <exclude-pattern>*\.(css)</exclude-pattern>
+  <rule ref="Drupal">
+    <!-- Exclude in favor of native typehints. -->
+    <exclude name="Drupal.Commenting.VariableComment.MissingVar"/>
+    <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
+    <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
+    <exclude name="Drupal.Commenting.Deprecated.MissingExtraInfo"/>
+  </rule>
+  <rule ref="DrupalPractice"/>
+  <rule ref="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing">
+    <properties>
+      <property name="linesCountBefore" value="1"/>
+      <property name="linesCountBeforeFirst" value="0"/>
+      <property name="linesCountAfter" value="1"/>
+      <property name="linesCountAfterLast" value="0"/>
+      <property name="controlStructures" type="array">
+        <element value="switch"/>
+        <element value="try"/>
+        <element value="if"/>
+        <element value="for"/>
+        <element value="foreach"/>
+        <element value="while"/>
+      </property>
+    </properties>
+  </rule>
+  <rule ref="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing">
+    <properties>
+      <property name="linesCountBefore" value="1"/>
+      <property name="linesCountBeforeFirst" value="0"/>
+      <property name="linesCountAfter" value="1"/>
+      <property name="linesCountAfterLast" value="0"/>
+      <property name="linesCountAfterWhenLastInCaseOrDefault" value="0"/>
+      <property name="linesCountAfterWhenLastInLastCaseOrDefault" value="0"/>
+      <property name="jumpStatements" type="array">
+        <element value="goto"/>
+        <element value="throw"/>
+        <element value="yield"/>
+        <element value="continue"/>
+        <element value="return"/>
+      </property>
+    </properties>
+  </rule>
+  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification"/>
+  </rule>
+
+  <rule ref="./PhpCodeStandard/src/Sniffs/Classes/DisallowMagicCallsSniff.php"/>
+</ruleset>

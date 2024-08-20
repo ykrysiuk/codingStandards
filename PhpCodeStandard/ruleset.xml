@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ruleset name="PtpCodeStandard">
+
+  <description>
+    This coding standard enforces the disallowance of magic method calls in PHP.
+  </description>
+
+  <fileExtensions>
+    <extension>php</extension>
+  </fileExtensions>
+
+  <rule ref="PhpCodeStandard.PTP.Sniffs.Classes.DisallowMagicCallsSniff">
+<!--  <rule ref="./PhpCodeStandard/src/Sniffs/Classes/DisallowMagicCallsSniff.php">-->
+    <severity>error</severity>
+  </rule>
+
+  <config name="tab_width" value="4"/>
+
+</ruleset>
