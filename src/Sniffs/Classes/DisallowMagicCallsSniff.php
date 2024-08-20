@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpCodeStandard\PTP\Sniffs\Classes;
+namespace PtpStandard\Snffs\Classes;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
