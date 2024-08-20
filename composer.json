@@ -1,0 +1,13 @@
+{
+    "name": "path_to_project/php-code-standard",
+    "description": "PathToProject custom PHPCS standards",
+    "type": "phpcodesniffer-standard",
+    "autoload": {
+        "psr-4": {
+            "PtpCodeStandard\\": "src/"
+        }
+    },
+    "require": {
+        "squizlabs/php_codesniffer": "^3.6"
+    }
+}
